@@ -1,0 +1,9 @@
+version: '3'
+services:       # informatio of all the images in your application.
+        redis-server:
+                image: 'redis'
+        node-app:
+                restart: on-failure #always, "no", unless-stopped       # restart policies.
+                build: .            # build context 
+                ports:
+                        - "4001:8081"   #ports you want to use localnetwork:container
